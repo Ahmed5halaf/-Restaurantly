@@ -1,0 +1,172 @@
+@import './vars';
+@import './global';
+
+.about{
+    @extend .background-img;
+    background-image: url(../images/about-bg.jpg);
+    background-attachment: fixed;
+    width: 100%;
+    padding: 70px 0;
+    position: relative;
+    z-index: 1;
+    height: auto;
+
+    &::after{
+        @extend .overlay;
+         z-index: -1;
+         background-color: rgba($color: #000000, $alpha: .8);
+     }
+
+     p{
+         color: #fff;
+     }
+
+     .about-descriptom{
+
+        .head-des{
+            font-family: $scondry-font;
+            font-size: 29px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .des-italik{
+            font-style: italic;
+            font-size: 15px;
+        }
+
+
+        .after-des{
+         
+            > p::before{
+                content: "\f058";
+                font-family: "Font Awesome 5 Free"; 
+                font-weight: 900;
+                display: inline-block;
+                margin-right: 15px;
+                width: 10px;
+                height: 10px;
+                color: $main-color;
+            }
+        }
+
+        .last-des{
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+     }
+
+
+     
+        // Start img
+        .about-img{
+            height: auto;
+            border: 1px solid $main-color;
+            padding: 0;
+            transform: scale(1);
+            transition: all .2s linear;
+            position: relative;
+
+            &:hover{
+                transform: scale(1.03);
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            .custem-arrow{
+                position: absolute;
+                width: 65px;
+                height: 65px;
+                border-width: 5px;
+                border-style: solid;
+                transition: all .2s ease-in-out;
+            }
+            .arrow-top{
+
+              @extend .custem-arrow;
+                top: 20px;
+                left: 20px;
+                border-color: $main-color transparent transparent $main-color;
+
+            }
+
+            &:hover  .arrow-top{
+                top: 10px;
+                left: 10px;
+
+            }
+
+            // arrow-bottom
+
+            .arrow-bottom{
+                @extend .custem-arrow;
+                bottom: 20px;
+                right: 20px;
+                border-color: transparent $main-color $main-color transparent;
+            }
+
+            &:hover .arrow-bottom{
+                bottom: 10px;
+                right: 10px;
+
+            }
+
+         
+        }
+
+        @include sm {
+            padding: 15px;
+        }
+
+}
+// ***********************Start Why
+
+.why{
+    width: 100%;
+    height: auto;
+    background-color: $bg-black;
+    padding: 60px 0;
+
+
+ .why-card {
+     background: #1a1814;
+     padding: 60px 30px 30px;
+     border: 16px solid  $bg-black;
+     transition: all .5s linear;
+
+     &:hover{
+        background: $main-color;
+        padding-top: 40px;
+    }
+       
+     h2{
+         font-weight: 600;
+         color: $main-color;
+         transition: color .5s linear;
+     }
+     &:hover h2{
+         color: #fff;
+     }
+
+     h3{
+         color: #fff;
+         margin: 25px 0;
+         font-family: $scondry-font;
+     }
+     p{
+         color: $color-text;
+         font-size: 13px;
+         line-height: 1.8;
+         transition: color .5s linear;
+     }
+
+     &:hover p{
+        color: #fff;
+    }
+
+   
+ }
+}

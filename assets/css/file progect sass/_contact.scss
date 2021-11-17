@@ -1,0 +1,115 @@
+@import './vars';
+@import './global';
+@import './responsine';
+
+.contact{
+    padding: 60px 0 5px;
+    height: auto;
+    background-color: $bg-black;
+
+    .map{
+        max-width: 100%;
+        height: auto;
+    }
+
+    
+  
+
+    .form-content{
+        margin-top: 30px;
+        color: #fff;
+        max-width: 98%;
+        
+
+        .conatct-box{
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            span{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: $main-color;
+                text-align: center;
+                line-height: 60px;
+                margin-right: 15px;
+                i{
+                    font-size: 30px;
+                }
+            }
+
+            .heading{
+                h3{
+                    font-size: 20px;
+                }
+                h6{
+                    font-size: 14px;
+                    color: $color-text;
+                }
+            }
+
+        }
+    }
+
+    .contact-form{
+        text-align: center;
+        padding: 0;
+
+    
+
+        input, textarea{    
+            padding: 10px 20px;        
+            background-color: transparent;
+            margin: 10px 0;
+            border: none;
+            outline: 1px solid rgba($color: $main-color, $alpha: .5);
+            color: #fff;
+
+            &:focus{
+                outline: 1px solid $main-color;
+
+            }
+        }
+        .half-input{
+
+           
+            input {
+                width:45%;
+                @include sm {
+                    width: 40%;
+                }
+                &:first-child{
+                    margin-right: 9%;
+                    @include md {
+                        margin-right: 8%;
+
+                    }
+                    
+                }
+            }
+        } 
+        
+        .all-input input{
+            width: 100%;
+            @include sm {
+                width: 90%;
+            }
+        }
+
+        .textarya textarea{
+            width: 100%;
+            height: 200px;
+
+            @include sm {
+                width: 90%;
+            }
+        }
+        .custem-btn{
+            margin: auto;
+            background-color: $main-color;
+            color: #fff;
+        }
+
+       
+    }
+}

@@ -1,0 +1,198 @@
+@import './vars';
+@import './responsine';
+html {
+    scroll-behavior: smooth;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+     font-family: 'Poppins', sans-serif;
+     position: relative;
+     overflow-x: hidden;
+}
+.custem-spinner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: $bg-color;
+}
+.spinner {
+    margin: 20% auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+  }
+  
+  .dot1, .dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: $main-color;
+    border-radius: 100%;
+    
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+  
+  .dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+  @-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+  @keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+  
+  @-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes sk-bounce {
+    0%, 100% { 
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 50% { 
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+.to-up{
+    position: fixed;
+    bottom: 25px;
+    right: 26px;
+    z-index: 555;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    font-size: 27px;
+    border: 1px solid $main-color;
+    outline: none;
+    display: none;
+    cursor: pointer;
+    transition: background .2s linear;
+    &:hover{
+        background: $main-color;
+    }
+}
+
+.overlay {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.background-img{
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: auto;
+    background-size: cover;
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+}
+
+a{
+    text-decoration: none;
+}
+button{
+    font-family: 'Poppins', sans-serif;
+}
+button:focus{
+    outline: none;
+    box-shadow: none !important;
+}
+
+.custem-btn{
+    width: 160px;
+    border: 2px solid $main-color;
+    border-radius: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    height: 38px;
+
+    &:hover{
+        color: #fff;
+        background-color: $main-color;
+    }
+}
+
+.lg-nav-fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 5 ;
+    display: block;
+    background-color: #000;
+
+  @include md {
+    .nav-icon{
+        top: 25px;
+    }
+  }
+}
+
+.head-title{
+    margin-bottom: 50px;
+    h6{
+        color: $color-text;
+    }
+
+    h2{
+        font-family: $scondry-font;
+        font-size: 45px;
+        font-weight: bold;
+        color: $main-color;
+        position: relative;
+
+        &::after{
+            content: "";
+            border-bottom: 1px solid $color-text;
+            width: 130px;
+            height: 10px;
+            position:absolute;
+            top: -27px;
+            left: 75px;
+        }
+
+        @include sm {
+            font-size: 30px;
+        }
+    }
+}

@@ -1,0 +1,142 @@
+@import './vars';
+@import './global';
+@import './responsine';
+
+
+
+.events{
+    @extend .background-img;
+    background-image: url("../images/events-bg.jpg");
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: -1;
+    padding: 60px 30px;
+    color: #fff;
+    
+
+   &::after{
+    @extend .overlay;
+    background-color: rgba($color: #000000, $alpha: .8);
+    z-index: -1;
+   }
+  
+
+   .swiper {
+    width: 100%;
+    height: 100%;
+
+    &-wrapper{
+      padding-bottom: 70px;
+    }
+
+     &-slide {
+        text-align: left;
+        font-size: 18px;
+        display: flex;    display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+        img{
+          width: 50%;
+        }
+        @include md {
+          display: inline-block;
+          img{
+            width: 100%;
+          }
+        }
+
+        .event-box{
+          margin-left: 20px;
+          line-height: 2;
+          margin-top: 5px;
+          h2{
+            font-family: $scondry-font;
+            color: $main-color;
+          }
+          span{
+            font-weight: 600;
+            font-size: 26px;
+            position: relative;
+            &::after{
+              content: "";
+              border-bottom: 1px solid $main-color;
+              width: 55px;
+              left: 6px;
+              position: absolute;
+              bottom: 0;
+            }
+          }
+          p{
+            font-size: 15px;
+          }
+          p:first-of-type {
+            font-style: italic;
+            line-height: 1.4;
+          }
+          p:last-of-type {
+            line-height: 1.4;
+          }
+
+        }
+      }
+
+       .swiper-pagination-bullet {
+        width: 15px;
+        height: 15px;
+        background-color: $main-color;
+      }
+  }
+ 
+}
+
+
+// Start Book A Table 
+
+.table{
+  height: auto;
+  padding: 60px 30px;
+  margin: 0;
+  background-color: $bg-black;
+
+  .head-title{
+    h2::after{
+      left: 125px;
+      top: -35px;
+    }
+  }
+
+ input {
+    padding:10px;
+    background-color: transparent;
+    border: 1px solid rgba($color: $main-color, $alpha: .8);
+    width: 92%;
+    margin: 0;
+  }
+
+  input:focus{
+    outline: 1px solid $main-color;
+  }
+
+  .textarea{
+    @extend input;
+    width: 98%;
+    height: 150px;
+    margin: 20px 0;
+
+    @include sm {
+      width: 93%;
+  }
+  }
+
+  .custem-btn{
+    background-color: $main-color;
+    color: #fff;
+    text-align: center;
+    margin: auto;
+    line-height: 36px;
+    cursor: pointer;
+  }
+}

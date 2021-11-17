@@ -1,0 +1,375 @@
+@import './responsine';
+@import './global';
+
+header{
+    width: 100%;
+    height: 890px;
+    background-image: url("../images/hero-bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+
+ 
+
+        &::after{
+           @extend .overlay;
+            z-index: -1;
+            background-color: rgba($color: #000000, $alpha: .6);
+        }
+
+    .up-nav{
+        font-size: 14px;
+        padding: 10px;
+        transition: all .5s;
+        @include sm {
+            font-size: 11px;
+            text-align: center;
+        }
+
+        span {
+            padding: 0 10px;
+        }
+        i{  
+            color: $main-color;
+            margin-right: 10px;
+        }
+        .lan {
+            @include sm {
+                display: none;
+            }
+        }
+        .lan span:first-child{
+            color: $main-color;
+        }
+    }
+
+    nav {
+        padding: 15px;
+        background-color: rgba($color: $bg-color , $alpha: .7);
+        position: relative;
+        transition: all .5s linear;
+        height: auto;
+
+        .active{
+            color: $main-color !important;
+        }
+      
+        @include md {
+            .fixed-nav {  
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                z-index:-1;
+            }
+        }
+        .nav-icon{
+            display: none;
+        }
+     @include md {
+        .nav-icon {
+            display: block;
+            position: absolute;
+            top: 15px;
+            right: -421px;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 6;
+            color: $main-color;
+
+            @include sm {   
+
+                right: -550px
+            }
+            @include xs {   
+
+                right: -300px
+            }
+
+        }
+     }
+
+        .logo{
+            font-size: 28px;
+            text-transform: uppercase;
+            line-height: 2.2;
+        }
+
+        .nav-list{
+            margin: auto;
+            text-align: center;
+            height: auto;
+
+            @include md {
+               
+                display: none;
+                width: 90%;
+                height: 100vh;
+                position: absolute;
+                top: 100vh;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #fff;
+                border-radius: 15px;
+                padding: 10px 15px;
+                z-index: 5;
+                .active{
+                    color: $main-color !important;
+                }
+                li {
+                    display: block;
+                    text-align: left;
+                    margin: 8px 0;
+                    padding: 5px 0 !important;
+                   a{
+                       color: #000 !important;
+                       font-size: 16px !important;
+                       &:hover {
+                           color: $main-color !important;
+                       }
+                   }
+                }
+            }
+           
+             > li {
+                margin-left: 16px;
+                padding: 15px 0;
+              
+            }
+
+            a{
+                color: #fff;
+                font-size: 14px;
+                transition: color .2s linear;
+                &:hover{
+                    color: $main-color;
+                }
+                @include lg {
+                    font-size: 12px
+                }
+        
+            }
+
+            .parnt-dropdowen{
+                position: relative;
+
+                &::after{
+                    content: '\f0dd';
+                    font-family: "Font Awesome 5 Free"; 
+                    font-weight: 900;
+                    top: 13px;
+                    right: -16px;
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                }
+
+                .son-dropdowen{
+                    position: absolute;
+                    top: 50px;
+                    left: -14px;
+                    width: 200px;
+                    height: 240px;
+                    background-color: #fff;
+                    padding: 10px;
+                    text-align: left;
+                    border-radius: 5px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity,visibility,top .2s ease-in;
+
+                    @include md {
+                        left: 100px;
+                        top: 0 !important; 
+                    }
+
+                    &:hover{
+                        background-color: #f9faf3;
+                        visibility: visible;
+                    }
+                   li{
+                       margin: 10px 5px;
+                   }
+                   .arrow-li{
+                       position: relative;
+                       width: 100%;
+
+                      &::before {
+                        content: '\f054';
+                        font-family: "Font Awesome 5 Free"; 
+                        font-weight: 900;
+                        width: 10px;
+                        position: absolute;
+                        top: 0px;
+                        right: 20px;
+                        height: 10px;
+                        color: #000;
+                    }
+                    .deep-dropdowen{
+                        position: absolute;
+                        top: 0;
+                        left: 184px;
+                        width: 200px;
+                        height: 222px;
+                        border-radius: 5px;
+                        background-color: #fff;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: opacity,visibility,left .5s ease-in;
+
+                        @include md {
+                            left: 160px;
+                            background-color:#f9faf3;
+                        }
+
+                        @include sm {
+                            left: 0;
+                        }
+
+                        &:hover{
+                            visibility: visible;
+                        }
+                    }
+
+                    &:hover .deep-dropdowen{
+                        opacity: 1;
+                        visibility: visible;
+                        @include sm {
+                            left: 50px;
+                        }
+                    }
+
+
+
+                   }
+                   
+                    a{
+                        color: #000;
+                  
+                    }
+                }
+
+                &:hover .son-dropdowen{
+                    opacity: 1;
+                    top: 40px;
+                    visibility: visible
+                }
+            }
+        }
+
+        .show{
+            display: block !important;
+        }
+
+        .btn-nav{
+            @extend .custem-btn;
+
+            @include lg {
+                width: 140px;
+            }
+
+            @include md {
+                display: none;
+            }
+        }
+
+        @include lg {
+            .container{
+                max-width: 100%;
+            }
+        }
+        @include lg {
+            .logo{
+                font-size: 26px;
+            }
+        }
+    }
+
+    .hero{
+       margin-top: 300px;
+       @include sm {
+           text-align: center;
+       }
+
+       .hero-box{
+
+        h1{
+            font-size: 45px;
+            font-weight: bold;
+            margin: 0;
+            span{
+                color: $main-color;
+            }
+         }
+
+         p{
+             font-size: 22px;
+             font-family: $scondry-font;
+         }
+         .hero-btn{
+            @extend .custem-btn;
+            &:last-child{
+                margin-left: 15px;
+
+                @include sm {
+                    margin-left: 0;
+                }
+            }
+        }        
+    }
+     .hero-vidu{
+       
+        .puls{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: $main-color;
+            line-height: 118px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 10px rgba($color: #CDA45E, $alpha: 0.2);
+            animation: pulse 1.2s linear infinite;
+            @keyframes pulse {
+                0% {
+                    box-shadow: 0 0 0 20px rgba($color: #CDA45E, $alpha: 0.7),
+                                0 0 0 20px rgba($color: #CDA45E, $alpha: 0.7);
+                }
+            
+                40% {
+                    box-shadow: 0 0 0 20px rgba($color: #CDA45E, $alpha: 0.7),
+                                0 0 0 20px rgba($color: #CDA45E, $alpha: 0);
+                }
+            
+                80% {
+                    box-shadow: 0 0 0 20px  rgba($color: #CDA45E, $alpha: 0.7),
+                                0 0 0 0 rgba($color: #CDA45E, $alpha: 0);
+                }
+            
+                100% {
+                    box-shadow: 0 0 0 20px rgba($color: #CDA45E, $alpha: 0.7),
+                                0 0 0 20px rgba($color: #CDA45E, $alpha: .7);
+                }
+
+                
+            }
+
+            i{
+                font-size: 40px;
+            }
+
+            @include sm {
+                margin: 50px auto;
+            }
+        }
+        a{
+            color: #fff;
+        }
+     }
+ }  
+    
+}
